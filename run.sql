@@ -1,3 +1,6 @@
-create or replace table MyTable (v variant);
+--!jinja
 
-create or replace table MyTable2 (v variant);
+CREATE SCHEMA {{env}};
+
+CREATE TABLE RAW (COL OBJECT)
+    DATA_RETENTION_TIME_IN_DAYS = {{retention_time}};
